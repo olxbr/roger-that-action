@@ -1,0 +1,15 @@
+name: 'roger-that-action'
+description: 'Action for tests, POCs, etc'
+inputs:
+  your-name:
+    description: 'Your name to say hello'
+    required: true
+
+
+runs:
+  using: 'composite'
+  steps:
+    - run: ${{ github.action_path }}/entrypoint.sh
+      shell: bash
+      env:
+        NAME: ${{ inputs.your-name }}
