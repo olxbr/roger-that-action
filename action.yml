@@ -42,16 +42,16 @@ runs:
       uses: treosh/lighthouse-ci-action@v9
       with:
         urls: ${{ inputs.urls }}
-        budgetPath: ${{ budgetPath }}
-        configPath: ${{ configPath }}
-        uploadArtifacts: ${{ uploadArtifacts }}
-        artifactName: ${{ artifactName }}
-        temporaryPublicStorage: ${{ temporaryPublicStorage }}
-        runs: ${{ runs }}
-        serverBaseUrl: ${{ serverBaseUrl }}
-        serverToken: ${{ serverToken }}
-        basicAuthUsername: ${{ basicAuthUsername }}
-        basicAuthPassword: ${{ basicAuthPassword }}
+        budgetPath: ${{ inputs.budgetPath }}
+        configPath: ${{ inputs.configPath }}
+        uploadArtifacts: ${{ inputs.uploadArtifacts }}
+        artifactName: ${{ inputs.artifactName }}
+        temporaryPublicStorage: ${{ inputs.temporaryPublicStorage }}
+        runs: ${{ inputs.runs }}
+        serverBaseUrl: ${{ inputs.serverBaseUrl }}
+        serverToken: ${{ inputs.serverToken }}
+        basicAuthUsername: ${{ inputs.basicAuthUsername }}
+        basicAuthPassword: ${{ inputs.basicAuthPassword }}
     - name: Print outputs
       shell: bash
       run: |
