@@ -58,3 +58,4 @@ runs:
         echo ${{ steps.treosh-lhci-action.outputs.resultsPath }}
         echo ${{ steps.treosh-lhci-action.outputs.links }}
         echo ${{ steps.treosh-lhci-action.outputs.assertionResults }}
+        echo ${{ steps.treosh-lhci-action.outputs.manifest }}
