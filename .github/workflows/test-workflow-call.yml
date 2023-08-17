@@ -1,7 +1,7 @@
 name: Test Workflow Call
 on:
   pull_request:
-    branches: ~default
+    branches: [main, master]
 
 jobs:
   test-wf-call:
