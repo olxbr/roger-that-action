@@ -1,9 +1,16 @@
 name: Test Workflow Call
+
 on:
   pull_request:
-    branches: [main, master]
+    branches: [ "main" ]
 
 jobs:
+  lets-go:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Go go go!"
+
   test-wf-call:
+    needs: [lets-go]
     uses: .github/workflows/unit-test.yml@main
     secrets: inherit
