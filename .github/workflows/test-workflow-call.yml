@@ -13,4 +13,3 @@ jobs:
   test-wf-call:
     needs: [lets-go]
     uses: ./.github/workflows/unit-tests.yml
-    secrets: inherit
