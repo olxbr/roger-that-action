@@ -1,0 +1,9 @@
+name: Test Workflow Call
+on:
+  pull_request:
+    branches: ~default
+
+jobs:
+  test-wf-call:
+    uses: .github/workflows/unit-test.yml@main
+    secrets: inherit
