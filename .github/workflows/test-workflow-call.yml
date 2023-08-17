@@ -6,4 +6,4 @@ on:
 
 jobs:
   test-wf-call:
-    uses: olxbr/roger-that/.github/workflows/unit-tests.yml@main
+    uses: olxbr/${{ github.repository }}/.github/workflows/unit-tests.yml@main
