@@ -6,13 +6,12 @@ on:
 
 env:
   # GITHUB_REPOSITORY: ${{ github.repository }}
-  GITHUB_REPOSITORY: "roger-that"
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   UNIT_TEST_WORKFLOW: ${{ vars.QG_UNIT_TEST_WORKFLOW }}
 
 jobs:
   test-wf-call:
-    uses: olxbr/${{ env.GITHUB_REPOSITORY }}/.github/workflows/unit-tests.yml@main
+    uses: olxbr/$GITHUB_REPOSITORY/.github/workflows/unit-tests.yml@main
   # test-repo-dispatch:
   #   name: Testing Repo Dispatch
   #   runs-on: ubuntu-latest
