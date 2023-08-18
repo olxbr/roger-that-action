@@ -12,9 +12,6 @@ env:
 
 jobs:
   test-wf-call:
-    uses: "olxbr/$REPO_NAME/.github/workflows/unit-tests.yml@main"
-
-  test-wf-call-2:
     uses: "olxbr/${{ env.REPO_NAME }}/.github/workflows/unit-tests.yml@main"
   # test-repo-dispatch:
   #   name: Testing Repo Dispatch
