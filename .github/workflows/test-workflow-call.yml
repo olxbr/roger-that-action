@@ -5,7 +5,8 @@ on:
     branches: [ "main" ]
 
 env:
-  GITHUB_REPOSITORY: ${{ github.repository }}
+  # GITHUB_REPOSITORY: ${{ github.repository }}
+  GITHUB_REPOSITORY: "roger-that"
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   UNIT_TEST_WORKFLOW: ${{ vars.QG_UNIT_TEST_WORKFLOW }}
 
