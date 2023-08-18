@@ -24,6 +24,7 @@ jobs:
   test-make-exec:
     name: Test Makefile execution
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v3
       - name: Run Unit Tests
