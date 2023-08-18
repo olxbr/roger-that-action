@@ -25,6 +25,7 @@ jobs:
     name: Test Makefile execution
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Run Unit Tests
         run: |
-          make test
+          make unit-tests
