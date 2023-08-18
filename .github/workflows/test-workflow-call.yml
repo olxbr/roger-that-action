@@ -7,7 +7,7 @@ on:
 env:
   GITHUB_REPOSITORY: ${{ github.repository }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  UNIT_TEST_WORKFLOW: "unit-tests.yml"
+  UNIT_TEST_WORKFLOW: ${{ vars.QG_UNIT_TEST_WORKFLOW }}
 
 jobs:
   # TEST Failed!
