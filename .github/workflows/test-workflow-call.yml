@@ -10,17 +10,16 @@ env:
   UNIT_TEST_WORKFLOW: ${{ vars.QG_UNIT_TEST_WORKFLOW }}
 
 jobs:
-  # TEST Failed!
-  # test-wf-call:
-  #   uses: ./.github/workflows/unit-tests.yml
-  test-repo-dispatch:
-    name: Testing Repo Dispatch
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger unit test wf
-        run: |
-            curl -X POST \
-              -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer ${{ env.GITHUB_TOKEN }}" \
-              https://api.github.com/repos/${{ env.GITHUB_REPOSITORY }}/actions/workflows/${{ env.UNIT_TEST_WORKFLOW }}/dispatches \
-              -d '{"ref":"main"}'
+  test-wf-call:
+    uses: olxbr/${{ env.GITHUB_REPOSITORY }}/.github/workflows/unit-tests.yml@main
+  # test-repo-dispatch:
+  #   name: Testing Repo Dispatch
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Trigger unit test wf
+  #       run: |
+  #           curl -X POST \
+  #             -H "Accept: application/vnd.github+json" \
+  #             -H "Authorization: Bearer ${{ env.GITHUB_TOKEN }}" \
+  #             https://api.github.com/repos/${{ env.GITHUB_REPOSITORY }}/actions/workflows/${{ env.UNIT_TEST_WORKFLOW }}/dispatches \
+  #             -d '{"ref":"main"}'
