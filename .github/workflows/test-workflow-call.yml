@@ -11,7 +11,7 @@ env:
 
 jobs:
   test-wf-call:
-    uses: olxbr/$GITHUB_REPOSITORY/.github/workflows/unit-tests.yml@main
+    uses: ../roger-that/.github/workflows/unit-tests.yml
   # test-repo-dispatch:
   #   name: Testing Repo Dispatch
   #   runs-on: ubuntu-latest
