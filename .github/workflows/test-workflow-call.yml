@@ -5,5 +5,33 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test-wf-call:
-    uses: olxbr/roger-that/.github/workflows/unit-tests.yml@main
+  # TEST Failed!
+  # test-wf-call:
+  #   uses: ./.github/workflows/unit-tests.yml
+  print-infos:
+    name: Print infos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        run: echo '${{ toJSON(github) }}'
+
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
+
+      - name: Dump steps context
+        run: echo '${{ toJSON(steps) }}'
+
+      - name: Dump runner context
+        run: echo '${{ toJSON(runner) }}'
+
+      - name: Dump strategy context
+        run: echo '${{ toJSON(strategy) }}'
+
+      - name: Dump matrix context
+        run: echo '${{ toJSON(matrix) }}'
+      
+      - name: Dump env
+        run: env
+        env:
+          DEBUG_MODE: ${{ contains(runner.debug, '1') }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
