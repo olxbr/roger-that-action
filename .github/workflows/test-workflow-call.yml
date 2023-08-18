@@ -4,34 +4,23 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  GITHUB_REPOSITORY: ${{ github.repository }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  UNIT_TEST_WORKFLOW: "unit-tests.yml"
+
 jobs:
   # TEST Failed!
   # test-wf-call:
   #   uses: ./.github/workflows/unit-tests.yml
-  print-infos:
-    name: Print infos
+  test-repo-dispatch:
+    name: Testing Repo Dispatch
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
-        run: echo '${{ toJSON(github) }}'
-
-      - name: Dump job context
-        run: echo '${{ toJSON(job) }}'
-
-      - name: Dump steps context
-        run: echo '${{ toJSON(steps) }}'
-
-      - name: Dump runner context
-        run: echo '${{ toJSON(runner) }}'
-
-      - name: Dump strategy context
-        run: echo '${{ toJSON(strategy) }}'
-
-      - name: Dump matrix context
-        run: echo '${{ toJSON(matrix) }}'
-      
-      - name: Dump env
-        run: env
-        env:
-          DEBUG_MODE: ${{ contains(runner.debug, '1') }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Trigger unit test wf
+        run: |
+            curl -X POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer ${{ env.GITHUB_TOKEN }}" \
+              https://api.github.com/repos/${{ env.GITHUB_REPOSITORY }}/actions/workflows/${{ env.UNIT_TEST_WORKFLOW }}/dispatches \
+              -d '{"ref":"main"}'
