@@ -15,4 +15,4 @@ jobs:
       - name: Quality Gate Action
         uses: olxbr/quality-gate-action@feat/results-presentation
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.OLXBR_BOT_PAT_GH_TOKEN }}
