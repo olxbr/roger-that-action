@@ -16,6 +16,5 @@ jobs:
         uses: olxbr/quality-gate-action@feat/sonarcloud-analysis
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # sonar_token: ${{ secrets.SONAR_TOKEN }}
-          sonar_token: 123
+          sonar_token: ${{ secrets.SONAR_TOKEN }}
           docs_url: "https://olxbr.atlassian.net/l/cp/N6utuY5U"
