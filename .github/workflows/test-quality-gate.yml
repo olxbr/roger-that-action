@@ -18,4 +18,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           sonar_token: ${{ secrets.SONAR_TOKEN }}
           sonar_check_timeout: ${{ vars.SONAR_CHECK_TIMEOUT }}
+          gates_to_skip: ${{ vars.GATES_TO_SKIP }}
           docs_url: "https://olxbr.atlassian.net/l/cp/N6utuY5U"
