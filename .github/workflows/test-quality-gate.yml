@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Quality Gate Action
-        uses: olxbr/quality-gate-action@feat/skip-gates-input
+        uses: olxbr/quality-gate-action@v0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           sonar_token: ${{ secrets.SONAR_TOKEN }}
