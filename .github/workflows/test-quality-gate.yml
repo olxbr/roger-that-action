@@ -7,7 +7,7 @@ jobs:
   quality-gate:
     if: github.base_ref == github.event.repository.default_branch
     name: Quality Gate
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, ubuntu-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -20,4 +20,15 @@ jobs:
           sonar_check_timeout: ${{ vars.SONAR_CHECK_TIMEOUT }}
           unit_test_check_timeout: ${{ vars.UNIT_TEST_CHECK_TIMEOUT }}
           gates_to_skip: ${{ vars.GATES_TO_SKIP }}
-          docs_url: "https://olxbr.atlassian.net/l/cp/N6utuY5U"
+          docs_url: "https://olxbr.atlassian.net/l/cp/vQZeDHDM"
+  
+  skip-quality-gate-for-non-default-branch:
+    if: github.base_ref != github.event.repository.default_branch
+    name: Skip Quality Gate (Non default branch)
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          ## PR DIFFERENT OF DEFAULT BRANCH
+          echo "Skipped"
+  
