@@ -3,8 +3,7 @@ name: Quality Gate
 on:
   pull_request:
 
-permissions:
-  issues: write
+permissions: write-all
 
 jobs:
   quality-gate:
