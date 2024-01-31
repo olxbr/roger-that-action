@@ -32,4 +32,3 @@ jobs:
         run: |
           ## PR DIFFERENT OF DEFAULT BRANCH
           echo "Skipped"
-  
