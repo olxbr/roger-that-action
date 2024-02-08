@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Quality Gate Action
-        uses: olxbr/quality-gate-action@test
+        uses: olxbr/quality-gate-action@feat/vulnerability-gate
         with:
           github_token: ${{ secrets.OLXBR_BOT_PAT_GH_TOKEN }}
           sonar_token: ${{ secrets.SONAR_TOKEN }}
