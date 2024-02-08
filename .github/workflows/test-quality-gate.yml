@@ -27,7 +27,7 @@ jobs:
           unit_test_check_timeout: ${{ vars.UNIT_TEST_CHECK_TIMEOUT }}
           gates_to_skip: ${{ vars.GATES_TO_SKIP }}
           docs_url: "https://olxbr.atlassian.net/l/cp/N4UW24eb"
-          gh_metrics_server_endpoint: "https://6595928a04335332df82f869.mockapi.io/quality-gates/metrics"
+          gh_metrics_server_endpoint: "https://6595928a04335332df82f869.mockapi.io"
   
   skip-quality-gate-for-non-default-branch:
     if: github.base_ref != github.event.repository.default_branch
