@@ -1,7 +1,9 @@
-name: Quality Gate
+name: Test Quality Gate
 
 on:
   pull_request:
+
+permissions: write-all
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -26,14 +28,13 @@ jobs:
       - name: Quality Gate Action
         uses: olxbr/quality-gate-action@v0
         with:
-          gh_token: ${{ steps.quality-gates-app-token.outputs.token }}
-          # gh_token: ${{ secrets.OLXBR_BOT_PAT_GH_TOKEN }}
+          github_token: ${{ steps.quality-gates-app-token.outputs.token }}
           sonar_token: ${{ secrets.SONAR_TOKEN }}
           sonar_check_timeout: ${{ vars.SONAR_CHECK_TIMEOUT }}
           unit_test_check_timeout: ${{ vars.UNIT_TEST_CHECK_TIMEOUT }}
           gates_to_skip: ${{ vars.GATES_TO_SKIP }}
           docs_url: "https://olxbr.atlassian.net/l/cp/N4UW24eb"
-          gh_metrics_server_endpoint: "https://6595928a04335332df82f869.mockapi.io"
+          gh_metrics_server_endpoint: ${{ secrets.GH_METRICS_SERVER_ENDPOINT }}
   
   skip-quality-gate-for-non-default-branch:
     if: github.base_ref != github.event.repository.default_branch
