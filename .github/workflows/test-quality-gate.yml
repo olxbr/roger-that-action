@@ -24,7 +24,7 @@ jobs:
           private-key: ${{ secrets.QUALITY_GATES_APP_PRIVATE_KEY }}
 
       - name: Quality Gate Action
-        uses: olxbr/quality-gate-action@chore/change-github-token-to-gh-token
+        uses: olxbr/quality-gate-action@v0
         with:
           gh_token: ${{ steps.quality-gates-app-token.outputs.token }}
           # gh_token: ${{ secrets.OLXBR_BOT_PAT_GH_TOKEN }}
