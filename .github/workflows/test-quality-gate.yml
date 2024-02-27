@@ -26,7 +26,7 @@ jobs:
           private-key: ${{ secrets.QUALITY_GATES_APP_PRIVATE_KEY }}
 
       - name: Quality Gate Action
-        uses: olxbr/quality-gate-action@fix/disable-code-scanning-tool-validation
+        uses: olxbr/quality-gate-action@v0
         with:
           github_token: ${{ steps.quality-gates-app-token.outputs.token }}
           sonar_token: ${{ secrets.SONAR_TOKEN }}
