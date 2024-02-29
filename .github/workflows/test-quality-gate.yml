@@ -25,6 +25,12 @@ jobs:
           app-id: ${{ secrets.QUALITY_GATES_APP_ID }}
           private-key: ${{ secrets.QUALITY_GATES_APP_PRIVATE_KEY }}
 
+      - name: List _actions dir
+        run: |
+          cd $RUNNER_WORKSPACE
+          cd ../_actions
+          ls -lsa
+
       - name: Quality Gate Action
         uses: olxbr/quality-gate-action@v0
         with:
