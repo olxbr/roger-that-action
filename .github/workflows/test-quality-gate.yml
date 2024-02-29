@@ -30,6 +30,7 @@ jobs:
           cd $RUNNER_WORKSPACE
           cd ../_actions
           ls -lsa
+          ls -lsa olxbr
 
       - name: Quality Gate Action
         uses: olxbr/quality-gate-action@v0
