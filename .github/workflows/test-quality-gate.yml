@@ -35,8 +35,8 @@ jobs:
       - name: Quality Gate Action
         uses: olxbr/quality-gate-action@feat/check-unit-test-sep-ref-workflows
         with:
-          # github_token: ${{ steps.quality-gates-app-token.outputs.token }}
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ steps.quality-gates-app-token.outputs.token }}
+          # github_token: ${{ secrets.GH_TOKEN }}
           sonar_token: ${{ secrets.SONAR_TOKEN }}
           sonar_check_timeout: ${{ vars.SONAR_CHECK_TIMEOUT }}
           unit_test_check_timeout: ${{ vars.UNIT_TEST_CHECK_TIMEOUT }}
