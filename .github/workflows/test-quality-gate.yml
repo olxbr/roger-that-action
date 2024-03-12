@@ -27,7 +27,7 @@ jobs:
           owner: ${{ github.repository_owner }}
 
       - name: Quality Gate Action
-        uses: olxbr/quality-gate-action@feat/show-vulnerability-infos
+        uses: olxbr/quality-gate-action@feat/show-security-alerts
         with:
           github_token: ${{ steps.quality-gates-app-token.outputs.token }}
           sonar_token: ${{ secrets.SONAR_TOKEN }}
