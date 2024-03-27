@@ -27,7 +27,8 @@ jobs:
           owner: ${{ github.repository_owner }}
 
       - name: Quality Gate Action
-        uses: olxbr/quality-gate-action@feat/change-coverage-analysis
+        #uses: olxbr/quality-gate-action@feat/change-coverage-analysis
+        uses: olxbr/quality-gate-action@feat/coverage-gate-lock
         with:
           github_token: ${{ steps.quality-gates-app-token.outputs.token }}
           sonar_token: ${{ secrets.SONAR_TOKEN }}
