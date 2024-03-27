@@ -10,3 +10,8 @@ runs:
       run: |
         NAME=${{inputs.name}}
         ./entrypoint.sh
+  using: "composite"
+    - name: Test
+      shell: bash
+      run: | 
+        echo "It works!"
