@@ -9,4 +9,4 @@ runs:
     - name: Test exit codes
       shell: bash
       run: |
-        exit 1
+        exit 1 || echo test
