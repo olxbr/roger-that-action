@@ -6,8 +6,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Say Hello!
+    - name: Test exit codes
       shell: bash
       run: |
-        NAME=${{inputs.name}}
-        ./entrypoint.sh
+        exit 1
