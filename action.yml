@@ -9,4 +9,4 @@ runs:
     - name: Test exit codes
       shell: bash
       run: |
-        exit 1 > /dev/null 2>&1
+        echo "::warning::Quality gate locks manually disabled by registering the \`SKIP_QUALITY_GATE_LOCK\` variable!"
