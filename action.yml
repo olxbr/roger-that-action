@@ -5,12 +5,14 @@ inputs:
     description: "Name to say Hello"
 runs:
   using: "composite"
+  steps:
     - name: Say Hello!
       shell: bash
       run: |
         NAME=${{inputs.name}}
         ./entrypoint.sh
   using: "composite"
+  steps:
     - name: Test
       shell: bash
       run: | 
