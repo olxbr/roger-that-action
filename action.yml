@@ -11,9 +11,3 @@ runs:
       run: |
         NAME=${{inputs.name}}
         ./entrypoint.sh
-  using: "composite"
-  steps:
-    - name: Test
-      shell: bash
-      run: | 
-        echo "It works!"
